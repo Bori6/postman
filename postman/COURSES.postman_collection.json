@@ -1,0 +1,168 @@
+{
+	"info": {
+		"_postman_id": "8f47981b-82b9-4d89-b573-bd945789855f",
+		"name": "COURSES",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23530089"
+	},
+	"item": [
+		{
+			"name": "LIST COURSES",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Check if response header has date\", function () {\r",
+							"    pm.response.to.have.header(\"date\");\r",
+							"pm.test(\"Status code name has 200 OK\", function () {\r",
+							"    pm.response.to.have.status(\"200 OK\");\r",
+							"});\r",
+							"});\r",
+							"pm.test(\"Status code name has string\", function () {\r",
+							"    pm.response.to.have.status(\"OK\");\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseUrl}}/api/courses",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"courses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET COURSE",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseUrl}}/api/courses/697",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"api",
+						"courses",
+						"697"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DELETE COURSE",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://notification-service.ishchoolapi.xyz/api/courses/2",
+					"protocol": "https",
+					"host": [
+						"notification-service",
+						"ishchoolapi",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"courses",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UPDATE COURSE",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\" : \"2 again\",\n    \"categoryId\" : 2,\n    \"description\" : \"description description description\",\n    \"courseUrl\" : \"London Lagos Los Angeles\",\n    \"imageUrl\" : \"https://source.unsplash.com/user/c_v_r/900x800\",\n    \"location\": \"offline\",\n    \"isPremium\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://notification-service.ishchoolapi.xyz/api/courses/2",
+					"protocol": "https",
+					"host": [
+						"notification-service",
+						"ishchoolapi",
+						"xyz"
+					],
+					"path": [
+						"api",
+						"courses",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
